@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
 
+const product = 'MacBook';
+const model = 'Air';
+const url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/MacBook_with_Retina_Display.png/500px-MacBook_with_Retina_Display.png'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function handleClick(e) {
+  alert('곧 도착합니다!');
+}
+
+root.render(
+  (
+    <>
+      <h1>{product} {model} 구매하기 </h1>
+      <img src={url} alt='product image'/>
+      <button onClick={handleClick}>확인</button>
+    </>
+  )
+);
